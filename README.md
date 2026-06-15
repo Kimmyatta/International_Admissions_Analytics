@@ -42,7 +42,9 @@ docs/data-model.md      Data model notes and table descriptions
 
 ## SQL Analysis
 
-The analysis script includes queries for:
+The full SQL analysis script is in [`sql/queries.sql`](sql/queries.sql). It contains 12 portfolio-ready queries, not just the example shown below.
+
+The query set includes:
 
 - Admissions funnel counts
 - Funnel conversion rates
