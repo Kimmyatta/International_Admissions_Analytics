@@ -32,4 +32,4 @@ Stores term-level identifiers, including intended term and profile ID.
 
 ## Privacy
 
-I included schema and query examples only. I did not include real applicant records or confidential admissions data.
+I used anonymized data and included schema and query examples only. I did not include real applicant records or confidential admissions data.

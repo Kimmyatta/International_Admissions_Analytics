@@ -90,4 +90,4 @@ WHERE ad.enrolled = 1
 
 ## Privacy Note
 
-I included schema and query examples only. I did not include private student records, personally identifiable information, or confidential admissions data.
+I used anonymized data and included schema and query examples only. I did not include private student records, personally identifiable information, or confidential admissions data.
