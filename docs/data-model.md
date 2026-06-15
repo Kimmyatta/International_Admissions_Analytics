@@ -12,7 +12,7 @@ Stores academic program or major interest fields. Applicants connect to programs
 
 ## Application_Decision
 
-Stores admissions funnel indicators such as started, submitted, completed, admitted, denied, confirmed, enrolled, and withdrawn. It also stores withdrawal timing fields for more detailed enrollment analysis.
+Stores application progression indicators such as started, submitted, completed, admitted, denied, confirmed, enrolled, and withdrawn. It also stores withdrawal timing fields for more detailed enrollment analysis.
 
 ## Applicant_Term
 
@@ -32,4 +32,4 @@ Stores term-level identifiers, including intended term and profile ID.
 
 ## Privacy
 
-The repository should only contain schema, example queries, and synthetic or anonymized examples. Do not commit real applicant records or confidential admissions data.
+I included schema and query examples only. I did not include real applicant records or confidential admissions data.
