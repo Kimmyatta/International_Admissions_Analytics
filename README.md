@@ -1,6 +1,6 @@
 # International Admissions Analytics
 
-This project models and analyzes international admissions data using SQL and a relational database design. The goal is to support admissions reporting, enrollment trend analysis, and decision-making around applicant status, program interest, term activity, and enrollment outcomes.
+This project models and analyzes international admissions data using SQL and a relational database design. The goal is to support admissions reporting, enrollment trend analysis, and decision-making around applicant status, program interest, term activity, application source performance, and enrollment outcomes.
 
 ## Project Overview
 
@@ -12,7 +12,7 @@ The database is designed around the admissions lifecycle:
 - Application decision outcomes
 - Enrollment and withdrawal indicators
 
-The project demonstrates relational database design, SQL querying, and analytics thinking for higher education admissions reporting.
+The project demonstrates relational database design, SQL querying, funnel analysis, conversion-rate reporting, and analytics thinking for higher education admissions reporting.
 
 ## Data Model
 
@@ -36,21 +36,41 @@ The design connects applicants to programs, terms, application statuses, and dec
 
 ```text
 sql/schema.sql          Reconstructed relational schema from the data model
-sql/queries.sql         SQL analysis queries
+sql/queries.sql         SQL analysis queries for admissions reporting
 docs/data-model.md      Data model notes and table descriptions
 ```
 
-## Example Analysis
+## SQL Analysis
 
-One query identifies applicants who were confirmed and enrolled:
+The analysis script includes queries for:
+
+- Admissions funnel counts
+- Funnel conversion rates
+- Confirmed applicants who enrolled
+- Application status breakdowns
+- Applications and enrollment rate by program
+- Admit and enrollment outcomes by country
+- Application source performance
+- Term-level application and enrollment trends
+- Withdrawal timing analysis
+- Withdrawal rate by program
+- Applicant type outcomes
+- Top cities by enrolled students
+
+Example query identifying confirmed applicants who enrolled:
 
 ```sql
-SELECT ap.applicant_id, att.application_status, ad.admit
+SELECT
+  ap.applicant_id,
+  att.application_status,
+  ad.admit,
+  ad.confirmed,
+  ad.enrolled
 FROM applicant ap
 JOIN applicant_term att
   ON ap.applicant_id = att.applicant_id
 JOIN application_decision ad
-  ON att.profile_id = ad.profile_id
+  ON ap.application_id = ad.application_id
 WHERE ad.enrolled = 1
   AND att.application_status = 'Confirmed';
 ```
@@ -58,6 +78,8 @@ WHERE ad.enrolled = 1
 ## Skills Demonstrated
 
 - SQL querying
+- SQL joins and aggregations
+- Funnel and conversion-rate analysis
 - Relational database design
 - Primary and foreign key modeling
 - Admissions analytics
