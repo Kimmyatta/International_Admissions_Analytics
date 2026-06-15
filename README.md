@@ -12,7 +12,7 @@ The database is designed around the admissions lifecycle:
 - Application decision outcomes
 - Enrollment and withdrawal indicators
 
-The project demonstrates relational database design, SQL querying, funnel analysis, conversion-rate reporting, and analytics thinking for higher education admissions reporting.
+The project demonstrates relational database design, SQL querying, application progression analysis, conversion-rate reporting, and analytics thinking for higher education admissions reporting.
 
 ## Data Model
 
@@ -46,8 +46,8 @@ The full SQL analysis script is in [`sql/queries.sql`](sql/queries.sql). It cont
 
 The query set includes:
 
-- Admissions funnel counts
-- Funnel conversion rates
+- Application progression counts
+- Application stage conversion rates
 - Confirmed applicants who enrolled
 - Application status breakdowns
 - Applications and enrollment rate by program
@@ -81,7 +81,7 @@ WHERE ad.enrolled = 1
 
 - SQL querying
 - SQL joins and aggregations
-- Funnel and conversion-rate analysis
+- Application progression and conversion-rate analysis
 - Relational database design
 - Primary and foreign key modeling
 - Admissions analytics

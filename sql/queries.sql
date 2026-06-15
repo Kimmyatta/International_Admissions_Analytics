@@ -1,4 +1,4 @@
--- 1. Admissions funnel summary
+-- 1. Application progression summary
 SELECT
   COUNT(*) AS total_applications,
   SUM(NVL(started, 0)) AS started_count,
@@ -10,7 +10,7 @@ SELECT
   SUM(NVL(withdrawn, 0)) AS withdrawn_count
 FROM application_decision;
 
--- 2. Funnel conversion rates
+-- 2. Application stage conversion rates
 SELECT
   ROUND(SUM(NVL(submit, 0)) / NULLIF(SUM(NVL(started, 0)), 0) * 100, 2) AS started_to_submitted_rate,
   ROUND(SUM(NVL(complete, 0)) / NULLIF(SUM(NVL(submit, 0)), 0) * 100, 2) AS submitted_to_completed_rate,
